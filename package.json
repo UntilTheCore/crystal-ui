@@ -1,0 +1,10 @@
+{
+  "name": "crystal",
+  "version": "0.0.1",
+  "description": "基于vue的ui轮子",
+  "main": "index.js",
+  "repository": "git@github.com:UntilTheCore/crystal-ui.git",
+  "author": "UntilTheCore",
+  "license": "MIT",
+  "private": true
+}
