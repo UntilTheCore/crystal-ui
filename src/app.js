@@ -1,9 +1,12 @@
-import Button from './Button'
 import Vue from 'vue'
-import Icon from "./Icon";
+import Button from './Button'
+import Icon from "./Icon"
+import ButtonGroup from './buttonGroup'
+
 // 注册到全局组件
 Vue.component('c-button',Button)
 Vue.component('c-icon',Icon)
+Vue.component('c-button-group',ButtonGroup)
 new Vue({
   el: '#app',
   data: {

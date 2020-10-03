@@ -1,5 +1,5 @@
 <template>
-  <button :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+  <button class="c-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
     <c-icon v-if="iconName && !loading" :name="iconName"></c-icon>
     <c-icon v-if="loading" class="icon-spin" name="loading"></c-icon>
     <span class="content"> <slot /> </span>
@@ -48,7 +48,7 @@ button {
   vertical-align : middle;
 
   &:hover {
-    background-color : var(--border-color-hover);
+    background-color : var(--button-color-hover-bg);
   }
 
   &:active {
