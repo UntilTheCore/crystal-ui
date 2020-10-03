@@ -1,12 +1,11 @@
 <template>
   <button :class="{[`icon-${iconPosition}`]:true}">
-    <svg v-if="iconName" class="icon" aria-hidden="true">
-      <use :xlink:href=`#icon-${iconName}`></use>
-    </svg>
+    <c-icon v-if="iconName" :name="iconName"></c-icon>
     <span class="content"> <slot /> </span>
   </button>
 </template>
 <script lang="js">
+
 export default {
   props: {
     iconName: String,
@@ -16,7 +15,6 @@ export default {
       validator(value) {
         return value === 'left' || value === 'right'
       }
-
     }
   }
 }
