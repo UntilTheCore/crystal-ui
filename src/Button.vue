@@ -1,6 +1,7 @@
 <template>
-  <button :class="{[`icon-${iconPosition}`]:true}">
-    <c-icon v-if="iconName" :name="iconName"></c-icon>
+  <button :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+    <c-icon v-if="iconName && !loading" :name="iconName"></c-icon>
+    <c-icon v-if="loading" class="icon-spin" name="loading"></c-icon>
     <span class="content"> <slot /> </span>
   </button>
 </template>
@@ -15,12 +16,24 @@ export default {
       validator(value) {
         return value === 'left' || value === 'right'
       }
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
+@keyframes spin {
+  0% {}
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 button {
   display        : inline-flex;
   align-items    : center;
@@ -45,6 +58,10 @@ button {
   > svg {
     order        : 1;
     margin-right : .2em;
+  }
+
+  > .icon-spin{
+    animation: spin 1s infinite linear;
   }
 
   > .content {

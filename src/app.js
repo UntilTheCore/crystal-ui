@@ -8,5 +8,9 @@ new Vue({
   el: '#app',
   data: {
     message: 'Crystal UI',
+    loading1: true,
+    loading2: true,
+    loading3: true,
+    loading4: true,
   }
 })
