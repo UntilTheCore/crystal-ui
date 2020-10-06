@@ -2,7 +2,7 @@
   <button class="c-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
     <c-icon v-if="iconName && !loading" :name="iconName"></c-icon>
     <c-icon v-if="loading" class="icon-spin" name="loading"></c-icon>
-    <span class="content"> <slot /> </span>
+    <span class="content"> <slot/> </span>
   </button>
 </template>
 <script lang="js">
@@ -28,9 +28,10 @@ export default {
 <style lang="scss" scoped>
 
 @keyframes spin {
-  0% {}
+  0% {
+  }
   100% {
-    transform: rotate(360deg);
+    transform : rotate(360deg);
   }
 }
 
@@ -45,6 +46,7 @@ button {
   background     : var(--button-bg);
   outline        : none;
   line-height    : 1;
+  // 解决按钮不对齐的问题
   vertical-align : middle;
 
   &:hover {
@@ -60,13 +62,13 @@ button {
     margin-right : .2em;
   }
 
-  > .icon-spin{
-    animation: spin 1s infinite linear;
+  > .icon-spin {
+    animation : spin 1s infinite linear;
   }
 
   > .content {
-    order          : 2;
-    vertical-align : middle;
+    order       : 2;
+    line-height : 1.2;
   }
 
   &.icon-right {
